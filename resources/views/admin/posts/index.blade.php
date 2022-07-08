@@ -9,6 +9,7 @@
           <tr>
             <th scope="col">ID</th>
             <th scope="col">Titolo</th>
+            <th scope="col">Categoria</th>
             <th scope="col">Contenuto</th>
             <th scope="col">Azioni</th>
           </tr>
@@ -18,6 +19,7 @@
                 <tr>
                     <td>{{ $post -> id}}</td>
                     <td>{{ $post -> title}}</td>
+                    <td>{{ $post -> category ? $post -> category->name : '-'}}</td>
                     <td>{{ $post -> content}}</td>
                     <td>
                         <div class="buttons d-flex">
