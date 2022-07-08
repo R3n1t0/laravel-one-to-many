@@ -15,6 +15,10 @@ class UpdatePostsTable extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
 
+            $table -> unsignedBigInteger('category_id')->nullable()->after('id');
+
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null');
+
         });
     }
 
@@ -26,7 +30,10 @@ class UpdatePostsTable extends Migration
     public function down()
     {
         Schema::table('posts', function (Blueprint $table) {
-            //
+
+            $table->dropForeign(['user_id']);
+            $table->dropColumn('user_id');
+
         });
     }
 }
