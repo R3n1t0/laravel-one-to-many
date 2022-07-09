@@ -32,7 +32,17 @@
                 <p>{{$message}}</p>
             @enderror
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <select class="form-select" aria-label="Default select example" name="category_id">
+            <option >Scegli una categoria</option>
+            @foreach ($categories as $category)
+                <option @if ($category->id == old('category_id'))
+                    selected
+                @endif value="{{$category->id}}">{{$category->name}}</option>
+            @endforeach
+        </select>
+
+        <button type="submit" class="btn btn-primary d-block mt-3">Submit</button>
       </form>
 
 </div>

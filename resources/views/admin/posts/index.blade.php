@@ -38,7 +38,7 @@
       </table>
       {{ $posts->links()}}
 
-      <h3>Post's per Catogerie</h3>
+      <h3 class="mt-5">Post's per Catogerie</h3>
       @foreach ($categories as $category)
       <h4>{{$category->name}}</h4>
         <ul>
@@ -48,8 +48,6 @@
                 <li>Non ci sono post per questa categoria</li>
             @endforelse
         </ul>
-
-
       @endforeach
 </div>
 @endsection

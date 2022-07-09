@@ -13,15 +13,7 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categories = [
-            'HTML',
-            'PHP',
-            'CSS',
-            'JavaScript',
-            'Python',
-            'C++',
-            'VueJs',
-            'Laravel'
+        $categories = ['HTML','PHP','CSS','JavaScript','Python','c++','VueJs','Laravel'
         ];
 
         foreach($categories as $category){
