@@ -32,11 +32,24 @@
                             </form>
                         </div>
                     </td>
-
                 </tr>
             @endforeach
         </tbody>
       </table>
       {{ $posts->links()}}
+
+      <h3>Post's per Catogerie</h3>
+      @foreach ($categories as $category)
+      <h4>{{$category->name}}</h4>
+        <ul>
+            @forelse ($category->posts as $post)
+                <li><a href="{{route('admin.post.show', $post)}}">{{$post->title}}</a></li>
+            @empty
+                <li>Non ci sono post per questa categoria</li>
+            @endforelse
+        </ul>
+
+
+      @endforeach
 </div>
 @endsection

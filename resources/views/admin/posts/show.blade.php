@@ -3,7 +3,11 @@
 @section('content')
 <div class="container">
     <h3>Titolo: {{ $post -> title}}</h3>
-    <h4>Ctegoria: {{ $post -> category ? $post -> category->name : '-'}}</h4>
+
+    @if ($post -> category)
+        <h4>Ctegoria: {{ $post -> category->name }}</h4>
+    @endif
+
     <h5>Contenuto: </h5>
     <p>{{ $post -> content}}</p>
     <a class="btn btn-warning mx-1" href="{{ route('admin.post.edit', $post)}}">MODIFICA</a>
